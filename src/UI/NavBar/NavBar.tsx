@@ -1,22 +1,42 @@
 import React from 'react';
-import { FaBars } from 'react-icons/all';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
-const styles = {
-  icon: {
-    cursor: 'pointer',
-    marginTop: 10,
-    marginLeft: 20,
-  },
-};
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }),
+);
 
 export default function NavBar() {
-  const [showSideDrawer, setShowSideDrawer] = React.useState<boolean>(false);
+  const classes = useStyles();
+
   return (
-    <div style={{ backgroundColor: '#0084ff', display: 'flex', height: '3em' }}>
-      <div style={styles.icon}>
-        <FaBars color="white" size={24} />
-      </div>
-      <div style={{ color: 'white', fontSize: 25, marginTop: 5, marginLeft: 50 }}>FeedHub</div>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            FeedHub
+          </Typography>
+          <Button color="inherit">Country: IN</Button>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }
