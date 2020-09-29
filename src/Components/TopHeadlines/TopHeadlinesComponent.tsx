@@ -17,10 +17,12 @@ export function TopHeadlinesComponent() {
       .catch((err) => console.log({ err }));
   }, []);
 
+  console.log({ data });
+
   function renderNews(): any {
-    return data?.map((newsData: any) => {
+    return data?.map((newsData: any, index) => {
       return (
-        <SimplePaper>
+        <SimplePaper key={index}>
           <PaperContent data={newsData} />
         </SimplePaper>
       );
