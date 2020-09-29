@@ -3,7 +3,7 @@ import React from 'react';
 export default function PaperContent({ data }: any) {
   return (
     <div>
-      <img src={data.urlToImage} height="400px" width="100%" />
+      <img src={data.urlToImage} height="400px" width="100%" alt={data.source.name} />
       <p
         style={{
           marginTop: -72,
