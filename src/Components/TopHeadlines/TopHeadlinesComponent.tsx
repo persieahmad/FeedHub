@@ -18,7 +18,7 @@ export function TopHeadlinesComponent() {
   }, []);
 
   function renderNews(): any {
-    return data.map((newsData: any) => {
+    return data?.map((newsData: any) => {
       return (
         <SimplePaper>
           <PaperContent data={newsData} />
