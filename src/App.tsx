@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-import BottomNav from './UI/BottomNav/BottomNav';
+import MainNav from './Navigation/MainNav/MainNav';
 import NavBar from './UI/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <p>Welcome to FeedHub!</p>
-      <BottomNav />
+      <MainNav />
     </div>
   );
 }

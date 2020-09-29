@@ -5,11 +5,12 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import WhatshotOutlinedIcon from '@material-ui/icons/WhatshotOutlined';
 import LanguageOutlinedIcon from '@material-ui/icons/LanguageOutlined';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
+import ContentNav from '../ContentNav/ContentNav';
 
 const useStyles = makeStyles({
   root: {
     position: 'fixed',
-    bottom: '1%',
+    bottom: '0',
     width: '100%',
   },
 });
@@ -19,16 +20,19 @@ export default function BottomNav() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-      showLabels
-      className={classes.root}>
-      <BottomNavigationAction label="Top Headlines" icon={<WhatshotOutlinedIcon />} />
-      <BottomNavigationAction label="Everything" icon={<LanguageOutlinedIcon />} />
-      <BottomNavigationAction label="Search" icon={<SearchOutlinedIcon />} />
-    </BottomNavigation>
+    <div>
+      <BottomNavigation
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        showLabels
+        className={classes.root}>
+        <BottomNavigationAction label="Top Headlines" icon={<WhatshotOutlinedIcon />} />
+        <BottomNavigationAction label="Everything" icon={<LanguageOutlinedIcon />} />
+        <BottomNavigationAction label="Search News" icon={<SearchOutlinedIcon />} />
+      </BottomNavigation>
+      <ContentNav {...{ value }} />
+    </div>
   );
 }
