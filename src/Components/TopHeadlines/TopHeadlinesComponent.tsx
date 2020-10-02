@@ -1,30 +1,31 @@
 import React from 'react';
-import { TopHeadlinesAPICall } from '../../API/TopHeadlinesAPI/TopHeadlinesAPI';
 import Loader from '../../UI/Loader/Loader';
-import SimplePaper from '../../UI/Paper/Paper';
-import PaperContent from '../../UI/PaperContent/PaperContent';
+import YouTube from 'react-youtube';
+import { useMediaQuery } from 'react-responsive';
 
 export function TopHeadlinesComponent() {
-  const [data, setData] = React.useState<string[]>([]);
   const [loader, setLoader] = React.useState<boolean>(true);
 
+  const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1224 });
+
+  const videoId = ['DIs-CBcnB68', 'B-7c_VnHxtA', 'xDMP3i36naA', 'MBqlwJrbrAU', 'ZE-GjQy-PLc'];
+  const options = {
+    height: isDesktopOrLaptop ? '390' : '190',
+    width: isDesktopOrLaptop ? '640' : '340',
+  };
+
   React.useEffect(() => {
-    TopHeadlinesAPICall()
-      .then((data) => {
-        setData(data);
-        setLoader(false);
-      })
-      .catch((err) => console.log({ err }));
+    setTimeout(() => {
+      setLoader(false);
+    }, 1000);
   }, []);
 
-  console.log({ data });
-
   function renderNews(): any {
-    return data?.map((newsData: any, index) => {
+    return videoId.map((id) => {
       return (
-        <SimplePaper key={index}>
-          <PaperContent data={newsData} />
-        </SimplePaper>
+        <div style={{ display: 'flex', justifyContent: 'center', margin: 10 }}>
+          <YouTube videoId={id} opts={options} />
+        </div>
       );
     });
   }
