@@ -11,8 +11,8 @@ const useStyles = makeStyles((theme: Theme) =>
       '& > *': {
         margin: theme.spacing(2),
         padding: theme.spacing(1),
-        width: theme.spacing(100),
-        height: theme.spacing(50),
+        width: theme.spacing(70),
+        height: theme.spacing(42),
       },
     },
   }),
@@ -23,7 +23,7 @@ export default function SimplePaper({ children }: { children: React.ReactNode })
 
   return (
     <div className={classes.root}>
-      <Paper elevation={3}>{children}</Paper>
+      <Paper elevation={5}>{children}</Paper>
     </div>
   );
 }

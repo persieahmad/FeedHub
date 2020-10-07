@@ -1,5 +1,6 @@
 import React from 'react';
+import CommonTopEveryComponent from '../CommonTopEveryComponent/CommonTopEveryComponent';
 
 export function EverythingComponent() {
-  return <p>Everything Component</p>;
+  return <CommonTopEveryComponent {...{ title: 'news' }} />;
 }
