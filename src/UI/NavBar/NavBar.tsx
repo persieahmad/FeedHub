@@ -38,7 +38,11 @@ export default function NavBar() {
           <Typography variant="h4" className={classes.title}>
             FeedHub
           </Typography>
-          <Button color="inherit">Country: IN</Button>
+          <Button
+            color="inherit"
+            onClick={() => window.open('https://github.com/persieahmad/FeedHub', '_blank')}>
+            See Code
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

@@ -1,1 +1,1 @@
-export const key = 'AIzaSyAYf6E5dBGIqEPcEyd8-vHwOpT9u61otk0';
+export const key = process.env.REACT_APP_YOUTUBE_API_KEY;

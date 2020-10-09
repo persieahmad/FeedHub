@@ -32,7 +32,7 @@ export default function BottomNav() {
         className={classes.root}>
         <BottomNavigationAction label="Top Headlines" icon={<WhatshotOutlinedIcon />} />
         <BottomNavigationAction label="Everything" icon={<LanguageOutlinedIcon />} />
-        <BottomNavigationAction label="Search News" icon={<SearchOutlinedIcon />} />
+        <BottomNavigationAction label="Search" icon={<SearchOutlinedIcon />} />
       </BottomNavigation>
       <ContentNav {...{ value }} />
     </div>
